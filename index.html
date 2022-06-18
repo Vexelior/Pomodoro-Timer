@@ -25,13 +25,21 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
+                            25 Minutes <br>
                             <a onclick="setTimerTo25Minutes()" id="25timer" class="btn btn-info">Pomodoro</a>
                         </div>
                         <div class="col-md-4">
-                            <a onclick="setTimerTo5Minutes()" id="5timer" class="btn btn-info">Break - 5</a>
+                            5 Minutes
+                            <br>
+                            <a onclick="setTimerTo5Minutes()" id="5timer" class="btn btn-info">Break</a>
                         </div>
                         <div class="col-md-4">
-                            <a onclick="setTimerTo15Minutes()" id="15timer" class="btn btn-info">Break - 15</a>
+                            15 Minutes
+                            <br>
+                            <a onclick="setTimerTo15Minutes()" id="15timer" class="btn btn-info">Break</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a onclick="setTimerTo10Seconds()" id="10timer" class="btn btn-info">Test</a>
                         </div>
                     </div>
                     <p class="card-text mt-2" id="timerArea">
@@ -41,14 +49,13 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text" id="timer" style="font-size: 50px;">
-                                    00:00:00
+                                    00:00
                                 </p>
                             </div>
                         </div>
                     </p>
                     <p class="card-text">
                         <a onclick="startTimer()" id="start" class="btn btn-success">Start</a>
-                        <a id="stop" class="btn btn-danger">Stop</a>
                         <a id="reset" class="btn btn-warning">Reset</a>
                     </p>
                 </div>

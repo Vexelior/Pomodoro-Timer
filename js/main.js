@@ -28,51 +28,46 @@ function setTimerTo25Minutes() {
     timerArea.innerHTML = '25:00';
 }
 
+function setTimerTo10Seconds() {
+    timerArea.innerHTML = '00:10';
+}
+
 // Function to handle the start button
 function startTimer() {
     let timer = timerArea.innerHTML.split(':');
     let minutes = parseInt(timer[0]);
     let seconds = parseInt(timer[1]);
-
-    twentyFiveTimer.disabled = true;
-    fiveTimer.disabled = true;
-    fifteenTimer.disabled = true;
+    let totalSeconds = minutes * 60 + seconds;
 
     let interval = setInterval(function () {
-        seconds--;
-        if (seconds < -1) {
-            minutes--;
-            seconds = 59;
+        totalSeconds--;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+        if (seconds < 10) {
+            seconds = '0' + seconds;
         }
-        if (minutes < -1) {
-            clearInterval(interval);
-            return;
+        if (minutes < 10) {
+            minutes = '0' + minutes;
         }
-        if (minutes <= -1 && seconds <= -1) {
-            clearInterval(interval);
-            alert('Time is up!');
-            timerArea.innerHTML = '25:00';
-            twentyFiveTimer.disabled = false;
-            fiveTimer.disabled = false;
-            fifteenTimer.disabled = false;
-        }
-
         timerArea.innerHTML = minutes + ':' + seconds;
+
+        if (totalSeconds === -1) {
+            // Play the sound
+            let audio = new Audio('media/alarm.mp3');
+            audio.play();
+            timerArea.innerHTML = 'Time is up!';
+            clearInterval(interval);
+            resetTimer();
+        }
     }, 1000);
 
     let stopButton = document.getElementById('stop');
-
-    // Function to handle the stop button
-    function stopTimer() {
-        clearInterval(interval);
-    }
-
     let resetButton = document.getElementById('reset');
 
     // Function to handle the reset button
     function resetTimer() {
-        stopTimer();
-        timerArea.innerHTML = '25:00';
+        clearInterval(interval);
+        timerArea.innerHTML = '00:00';
     }
 
     resetButton.addEventListener('click', resetTimer);
