@@ -1,5 +1,4 @@
 html {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
     background: lightslategray;
 }
@@ -12,6 +11,5 @@ body {
     background-size: cover;
     background-color: #464646;
     color: white;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 20px;
 }

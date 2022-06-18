@@ -1,66 +1,66 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Pomodoro - Online Timer</title>
-        <link rel="icon" href="./media/favicon.ico">
-        <link rel="stylesheet" href="css/stylesheet.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="container mt-5">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h1>Pomodoro</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro - Online Timer</title>
+    <link rel="icon" href="./media/favicon.ico">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card text-center">
+            <div class="card-header">
+                <h1>Pomodoro Timer</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>25 Minutes</b>
+                        <br>
+                        <a onclick="setTimerTo25Minutes()" id="25timer" class="btn btn-info">Focus</a>
+                    </div>
+                    <div class="col-md-4">
+                        <b>5 Minutes</b>
+                        <br>
+                        <a onclick="setTimerTo5Minutes()" id="5timer" class="btn btn-info">Break</a>
+                    </div>
+                    <div class="col-md-4">
+                        <b>15 Minutes</b>
+                        <br>
+                        <a onclick="setTimerTo15Minutes()" id="15timer" class="btn btn-info">Break</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            25 Minutes <br>
-                            <a onclick="setTimerTo25Minutes()" id="25timer" class="btn btn-info">Pomodoro</a>
+                <p class="card-text mt-2" id="timerArea">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h3>Timer</h3>
                         </div>
-                        <div class="col-md-4">
-                            5 Minutes
-                            <br>
-                            <a onclick="setTimerTo5Minutes()" id="5timer" class="btn btn-info">Break</a>
-                        </div>
-                        <div class="col-md-4">
-                            15 Minutes
-                            <br>
-                            <a onclick="setTimerTo15Minutes()" id="15timer" class="btn btn-info">Break</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a onclick="setTimerTo10Seconds()" id="10timer" class="btn btn-info">Test</a>
+                        <div class="card-body">
+                            <p class="card-text" id="timer" style="font-size: 50px;">
+                                00:00
+                            </p>
                         </div>
                     </div>
-                    <p class="card-text mt-2" id="timerArea">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                <h3>Timer</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text" id="timer" style="font-size: 50px;">
-                                    00:00
-                                </p>
-                            </div>
-                        </div>
-                    </p>
-                    <p class="card-text">
-                        <a onclick="startTimer()" id="start" class="btn btn-success">Start</a>
-                        <a id="reset" class="btn btn-warning">Reset</a>
-                    </p>
-                </div>
+                </p>
+                <p class="card-text">
+                    <a onclick="startTimer()" id="start" class="btn btn-success">Start</a>
+                    <br>
+                    <a id="reset" class="btn btn-warning mt-2">Reset</a>
+                </p>
             </div>
         </div>
-    </body>
+    </div>
+</body>
     <script src="js/main.js"></script>
 </html>
