@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
 </head>
-
 <body>
     <div class="container mt-5">
         <div class="card text-center">
@@ -28,17 +26,17 @@
                     <div class="col-md-4">
                         <b>25 Minutes</b>
                         <br>
-                        <a onclick="setTimerTo25Minutes()" id="25timer" class="btn btn-info">Focus</a>
+                        <button onclick="SetTimerTo25Minutes()" id="25timer" class="btn btn-info">Focus</button>
                     </div>
                     <div class="col-md-4">
                         <b>5 Minutes</b>
                         <br>
-                        <a onclick="setTimerTo5Minutes()" id="5timer" class="btn btn-info">Break</a>
+                        <button onclick="SetTimerTo5Minutes()" id="5timer" class="btn btn-info">Break</button>
                     </div>
                     <div class="col-md-4">
                         <b>15 Minutes</b>
                         <br>
-                        <a onclick="setTimerTo15Minutes()" id="15timer" class="btn btn-info">Break</a>
+                        <button onclick="SetTimerTo15Minutes()" id="15timer" class="btn btn-info">Break</button>
                     </div>
                 </div>
                 <p class="card-text mt-2" id="timerArea">
@@ -54,9 +52,9 @@
                     </div>
                 </p>
                 <p class="card-text">
-                    <a onclick="startTimer()" id="start" class="btn btn-success">Start</a>
+                    <button onclick="StartTimer()" id="start" class="btn btn-success">Start</button>
                     <br>
-                    <a id="reset" class="btn btn-warning mt-2">Reset</a>
+                    <button id="reset" class="btn btn-warning mt-2">Reset</button>
                 </p>
             </div>
         </div>
